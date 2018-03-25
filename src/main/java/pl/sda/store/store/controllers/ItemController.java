@@ -10,7 +10,7 @@ public class ItemController {
 
     @GetMapping("/additem")
     public String addItemForm(ModelMap map){
-        map.addAttribute("item", new Item())
+        map.addAttribute("item", new Item());
         return "additem";
     }
 }

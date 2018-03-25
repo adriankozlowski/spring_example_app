@@ -8,6 +8,6 @@ public class WelcomeController {
 
     @GetMapping("/")
     public String index(){
-        return "additem";
+        return "layout";
     }
 }

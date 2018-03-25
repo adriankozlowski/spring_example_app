@@ -7,7 +7,37 @@
 <body>
 
 <div  layout:fragment="content"  class="row">
-qwertyuio
+
+   <form th:action="@{/additem}" method="post" th:object="${item}">
+      <div class="form-group">
+         <label for="name">Email address</label>
+         <input type="text" class="form-control" id="name"
+                th:field="*{name}"
+                placeholder="Nazwa">
+
+         <label for="price">Cena</label>
+         <input type="text" class="form-control" id="price"
+                th:field="*{price}"
+                placeholder="Cena">
+
+         <label for="qty">Ilość</label>
+         <input type="text" class="form-control" id="qty"
+                th:field="*{qty}"
+                aria-describedby="emailHelp" placeholder="Ilość">
+
+
+         <label for="desc">Opis</label>
+         <input type="text" class="form-control" id="desc"
+                th:field="*{desc}"
+                aria-describedby="emailHelp" placeholder="Opis">
+
+         <input type="submit" class="form-control" value="OK">
+
+         <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      </div>
+
+   </form>
+
 </div>
 </body>
 </html>
