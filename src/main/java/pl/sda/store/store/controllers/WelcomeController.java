@@ -14,6 +14,6 @@ public class WelcomeController {
     @GetMapping("/")
     public String index(ModelMap map) {
         map.addAttribute("items", itemService.getList());
-        return "layout";
+        return "index";
     }
 }

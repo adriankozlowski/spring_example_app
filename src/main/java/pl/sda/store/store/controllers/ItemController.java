@@ -19,6 +19,6 @@ public class ItemController {
     @PostMapping("/additem")
     public String addItem(@ModelAttribute Item item) {
 
-        return "layout";
+        return "index";
     }
 }
