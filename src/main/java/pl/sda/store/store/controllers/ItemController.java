@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import pl.sda.store.store.model.Item;
 import pl.sda.store.store.services.ItemService;
@@ -25,6 +26,12 @@ public class ItemController {
     @PostMapping("/additem")
     public String addItem(@ModelAttribute Item item) {
         itemService.addItem(item);
+        return "redirect:/";
+    }
+
+    @GetMapping("/buyitem/{name}")
+    public String sell(ModelMap map, @PathVariable("name") String name) {
+        itemService.sell(name);
         return "redirect:/";
     }
 }

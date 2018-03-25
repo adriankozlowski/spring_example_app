@@ -72,7 +72,7 @@
                 <td th:text="${item.name}">Larry</td>
                 <td th:text="${item.price}">the Bird</td>
                 <td th:text="${item.qty}">@twitter</td>
-                <td><a th:href="@{'/buyitem/'+${item.name}}"></a></td>
+                <td><a th:text="'Sprzedaj'" th:href="@{'/buyitem/'+${item.name}}"></a></td>
             </tr>
             </tbody>
         </table>

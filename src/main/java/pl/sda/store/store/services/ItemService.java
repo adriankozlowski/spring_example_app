@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import pl.sda.store.store.model.Item;
 import pl.sda.store.store.repositories.ItemRepository;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 @Service
@@ -37,5 +38,17 @@ public class ItemService {
      */
     public List<Item> getList() {
         return itemRepository.getList();
+    }
+
+    public void sell(String name) {
+        Integer byName = itemRepository.findByName(name);
+        if (byName != null) {
+            Item item = itemRepository.get(byName);
+            if (item.getQty() == BigDecimal.ONE) {
+                itemRepository.remove(item);
+            } else {
+                item.setQty(item.getQty().subtract(BigDecimal.ONE));
+            }
+        }
     }
 }
