@@ -63,6 +63,7 @@
                 <th scope="col">Nazwa</th>
                 <th scope="col">Cena</th>
                 <th scope="col">ilosc</th>
+                <th scope="col">akcja</th>
             </tr>
             </thead>
             <tbody>
@@ -71,6 +72,7 @@
                 <td th:text="${item.name}">Larry</td>
                 <td th:text="${item.price}">the Bird</td>
                 <td th:text="${item.qty}">@twitter</td>
+                <td><a th:href="@{'/buyitem/'+${item.name}}"></a></td>
             </tr>
             </tbody>
         </table>
